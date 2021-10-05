@@ -25,9 +25,10 @@ def print_service_type_docs(service_type, data):
     for key, value in schema['properties'].items():
         title = value['title']
         print_row(
-            f"``{value.get('title', '')}``", 
+            f"``{key}``", 
+            #f"``{value.get('title', '')}``", 
             value.get('type', ''), 
-            value.get("description", '')
+            value.get('title') + " " + value.get("description", '')
             )
         pass
     # Empty row to end
